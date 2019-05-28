@@ -7,10 +7,10 @@ public class TemplateDemo {
 		i.displayItems();
 		i.addItem();
 		OnlineOrder or=new OnlineOrder();
-		or.process();
+		or.process(i);
 		System.out.println();
 		OfflineOrder of=new OfflineOrder();
-		of.process();
+		of.process(i);
 
 	}
 

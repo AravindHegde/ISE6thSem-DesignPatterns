@@ -2,15 +2,14 @@ package templateMethod;
 
 
 public abstract class OrderProcessing {
-	abstract boolean selectItem();
-	abstract void doPayment();
+	abstract boolean selectItem(ItemList i);
+	abstract void doPayment(ItemList i);
 	abstract void doDelivery();
-	public final void process() {
-		ItemList i=new ItemList();
+	public final void process(ItemList i) {
 		i.displayItems();
-		boolean b=selectItem();
+		boolean b=selectItem(i);
 		if(b) {
-			doPayment();
+			doPayment(i);
 			doDelivery();
 		}
 		else {

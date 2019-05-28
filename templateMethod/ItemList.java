@@ -35,6 +35,7 @@ public class ItemList {
 			price=sc.nextFloat();
 			al.add(new ItemList(name,price));
 			System.out.println("If you want to add again \"y\"");
+			str=sc.next();
 		}
 	}
 	boolean search(String str) {

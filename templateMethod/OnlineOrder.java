@@ -3,19 +3,17 @@ package templateMethod;
 import java.util.Scanner;
 
 public class OnlineOrder extends OrderProcessing{
-	ItemList i;
+	
 	String name;
 	Scanner sc=new Scanner(System.in);
-	public OnlineOrder(){
-		i=new ItemList();
-	}
-	boolean selectItem() {
+
+	boolean selectItem(ItemList i) {
 		System.out.println("Enter item");
 		name=sc.next();
 		return i.search(name);
 	}
 	@Override
-	void doPayment() {
+	void doPayment(ItemList i) {
 		System.out.println("Enter quantity");
 		int qty=sc.nextInt();
 		float val=i.calculatePrice(name,qty);
